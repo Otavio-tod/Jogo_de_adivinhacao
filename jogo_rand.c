@@ -10,7 +10,7 @@ int main(void)
         int x = (rand() % 100) + 1;
     do
     {
-        printf("Digite o seu chute: ");
+        printf("\nDigite o seu chute: ");
         if (scanf("%d", &chute) != 1)
         {
             printf("\n[ERRO] Entrada invalida! Digite apenas numeros.\n");
@@ -19,13 +19,25 @@ int main(void)
             chute = 0;
             continue;
         }
+        if (chute == 0)
+        {
+            printf("Saindo");
+            break;
+        }
         if (chute == x)
         {
-            printf("Isso, acertou o chute do numero ");
+            printf("Isso, acertou o chute do numero. ");
         }
         else
         {
-            printf("Nao foi dessa vez, voce nao acertou o chute, tente denovo ");
+            if (chute > x)
+            {
+                printf("Chutou alto. ");
+            }
+            else
+            {
+                printf("Chutou baixo. ");
+            }
         }
     } while ( chute != x);
     return 0;
